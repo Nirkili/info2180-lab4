@@ -1,0 +1,10 @@
+/*Changes to match image*/
+h1{
+    font-size: 36px;
+}
+
+button{
+    width: 70px;
+    background-color: white;
+    border-radius: 5px;
+}

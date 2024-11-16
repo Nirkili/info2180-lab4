@@ -11,8 +11,27 @@
     </head>
 
     <body>
-        <h1>Avengers Character Search</h1>
-        <button id="search">Search</button>
+        <h1><strong>AVENGER CHARACTER SEARCH</strong></h1>
+
+        <!--Superhero search area-->
+        <div class = container>
+            <form action = "superheroes.php"  method = "GET">
+
+                <p>Search by Full Name or Alias</p>
+
+                <input type = "text" id = "searchBar" name = "query" placeholder="e.g. Captain America or Steve Rogers">
+
+                <button type = "submit">Search</button>
+            </form>
+        
+        <h2><strong>RESULT</strong></h2>
+        <hr>
+
+        </div>
+
+        <!--Results of search here-->
+        <div id = "result"></div>
+        
     </body>
 
 </html>

@@ -1,5 +1,8 @@
 <?php
 
+//The following line was needed to make the program run due to CORS errors
+header("Access-Control-Allow-Origin: *");
+
 $superheroes = [
   [
       "id" => 1,
@@ -63,10 +66,39 @@ $superheroes = [
   ], 
 ];
 
-?>
+//Getting and sanitizing input
+$req = '';
+if(isset($_GET['query'])){
+    $req = strip_tags($_GET['query']);
+}
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+$finder = 0;
+
+//Default list
+if ($req == '') {
+    echo "<ul>";
+    foreach ($superheroes as $superhero):
+        echo "<li>". htmlspecialchars($superhero['alias'])."</li>";
+    endforeach;
+
+    echo "</ul>";
+
+}
+
+//search
+else{
+    foreach ($superheroes as $superhero):
+        if($req == $superhero['alias'] || $req == $superhero['name']){
+            echo "<h3>". htmlspecialchars($superhero['alias']). "</h3>";
+            echo "<h4> A.K.A ". htmlspecialchars($superhero['name']). "</h4>";
+            echo "<p>". htmlspecialchars($superhero['biography']). "</p>";
+            $finder += 1;
+        }
+    endforeach;
+
+    //Can't find a superhero
+    if($finder == 0){
+        echo "<strong>SUPERHERO NOT FOUND</strong>";
+    }
+}
+

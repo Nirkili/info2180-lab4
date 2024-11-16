@@ -1,10 +1,58 @@
 /*Changes to match image*/
+
+html{
+    background-color: rgb(239, 239, 239);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
 h1{
-    font-size: 36px;
+    margin: 0;
+    font-size: 40px;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(66, 146, 178);
+    color: white;
+    padding: 55px;
+    grid-column: span 3;
+}
+
+h2{
+    padding-top: 35px;
+    padding-bottom: 10px;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+.container{
+    grid-column: 2;
+}
+
+.container p{
+    font-size: 15px;
+}
+
+#searchBar{
+    grid-column: span 1;
+    padding: 10px;
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px rgb(198, 198, 198);
+}
+
+#result{
+    grid-column: 2;
 }
 
 button{
     width: 70px;
-    background-color: white;
+    background-color: rgb(200, 58, 0);
     border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 10px;
+    box-shadow: 0px 2px 5px 0px rgb(198, 198, 198);
 }
